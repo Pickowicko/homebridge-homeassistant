@@ -341,11 +341,11 @@ HomeAssistantLight.prototype = {
       (this.data.attributes.brightness || 0) / 255
     );
     if (this.data.attributes.saturation !== undefined) {
-      if (this.is_supported(this.features.XY_COLOR)) {
-        serviceData.xy_color = LightUtil.rgbToCie(rgb.r, rgb.g, rgb.b);
-      } else {
-        serviceData.rgb_color = [rgb.r, rgb.g, rgb.b];
-      }
+//      if (this.is_supported(this.features.XY_COLOR)) {
+//        serviceData.xy_color = LightUtil.rgbToCie(rgb.r, rgb.g, rgb.b);
+//      } else {
+//        serviceData.rgb_color = [rgb.r, rgb.g, rgb.b];
+//      }
     }
 
     this.client.callService(this.domain, 'turn_on', serviceData, (data) => {
